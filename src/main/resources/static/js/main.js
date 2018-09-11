@@ -1,5 +1,5 @@
 function getIndex(list, id) {
-    for (var i = 0; i < list.length; i++ ) {
+    for (var i = 0; i < list.length; i++) {
         if (list[i].id === id) {
             return i;
         }
@@ -58,16 +58,16 @@ Vue.component(
         props: ['message', 'editMethod', 'messages'],
         template: '<div>' +
         '<i>({{message.id}})</i>{{message.text}}' +
-        '<span style="position: absolute; right: 0">' +
+        '<span id="s1">' +
         '<input type="button" value="Edit" @click="edit" />' +
-        '<input type="button" value="X" @click="del" />' +
+        '<input type="button" value="Delete" @click="del" />' +
         '</span>' +
         '</div>',
         methods: {
             edit: function () {
                 this.editMethod(this.message);
             },
-            del: function() {
+            del: function () {
                 messageApi.remove({id: this.message.id}).then(result => {
                     if (result.ok) {
                         this.messages.splice(this.messages.indexOf(this.message), 1)
@@ -85,9 +85,9 @@ Vue.component(
                 message: null
             }
         },
-        template: '<div  style="position: relative; width: 300px;">' +
+        template: '<div id="d1">' +
         '<message-form :messages="messages"  :messageAttr="message" />' +
-        '<messages-row v-for="message in messages" :editMethod="editMethod"' +
+        '<messages-row id="d2" v-for="message in messages" :editMethod="editMethod"' +
         ' :message="message" :messages="messages" :key="message.id" />' +
         '</div>',
         created: function () {

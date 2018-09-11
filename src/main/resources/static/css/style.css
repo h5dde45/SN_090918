@@ -1,3 +1,24 @@
-body{
-    background: darkgrey;
+body {
+    background: slategray;
+    margin: 30px;
+}
+
+#d1 {
+    position: relative;
+    width: 300px;
+}
+
+#d2 {
+    margin-top: 5px;
+}
+
+#s1 {
+    position: absolute;
+    right: 0;
+}
+.a1{
+    text-decoration: none;
+    color: beige;
+    font-family: ISOCPEUR;
+    font-size: 20px;
 }
